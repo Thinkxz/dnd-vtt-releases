@@ -31,7 +31,7 @@ La app no usa servidores propios: uno del grupo abre la mesa en su PC y los dem�
 
 ## Actualizar
 
-La app avisa cuando hay una versión nueva. Para actualizar, bajá el zip nuevo y descomprimilo en otra carpeta; la anterior la podés borrar.
+La app avisa cuando hay una versión nueva y muestra la huella del zip para comprobarlo (ver abajo). Para actualizar, bajá el zip nuevo y descomprimilo en otra carpeta; la anterior la podés borrar.
 
 Tu perfil y tus partidas guardadas no están dentro de la carpeta de la app, así que no se pierden.
 
@@ -39,15 +39,17 @@ Si la app dice que tu versión es más vieja que la de la mesa, hay que actualiz
 
 Las versiones de prueba se publican como "Pre-release": la app no las anuncia y no hace falta bajarlas.
 
-## Comprobar la descarga (opcional)
+## Comprobar la descarga
 
-Cada versión publica el tamaño y la huella SHA-256 de su zip. Para ver la huella del archivo que bajaste, abrí PowerShell en esa carpeta y escribí:
+Cuando hay una versión nueva, la app la avisa con el nombre del zip, su tamaño y su **huella SHA-256** (un código de 64 letras y números). Esa huella viene firmada por la app: es la única que vale. No la compares con la que aparezca en esta página ni en otra, que podrían estar cambiadas.
+
+Antes de abrir el zip nuevo, abrí PowerShell en la carpeta donde lo bajaste y escribí:
 
 ```powershell
 Get-FileHash .\DND-VTT-*.zip -Algorithm SHA256
 ```
 
-Tiene que coincidir con la que figura en la página de esa versión.
+El código que aparece en "Hash" tiene que ser exactamente igual al que muestra la app (el botón "Copiar huella" lo copia). Si no coincide, no lo abras y avisale a quien publica la app.
 
 ## Qué hace la app en internet
 
